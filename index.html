@@ -1,1 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Juice - E-commerce de Peças de PC, Gaming e Tech</title>
+    <meta name="description" content="Loja especializada em peças de PC, gaming, home office e acessórios tech de alta qualidade">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="header-left">
+                <h1 class="logo" onclick="appState.navigateToHome()">
+                    <i class="fas fa-apple-alt"></i> Apple Juice
+                </h1>
+            </div>
+            <nav class="header-nav">
+                <button onclick="appState.navigateToSection('home')" class="nav-link">Início</button>
+                <button onclick="appState.navigateToSection('categories')" class="nav-link">Categorias</button>
+                <button onclick="appState.navigateToSection('products')" class="nav-link">Produtos</button>
+                <button onclick="appState.navigateToSection('newsletter')" class="nav-link">Newsletter</button>
+            </nav>
+            <div class="header-actions">
+                <button onclick="appState.openSearch()" class="icon-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button onclick="appState.openCart()" class="icon-btn cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </button>
+                <button onclick="appState.openLogin()" class="btn-login" id="login-btn">
+                    <i class="fas fa-user"></i> <span id="login-text">Login</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home View -->
+        <div id="home-view">
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="container hero-content">
+                    <h1 class="hero-title">Bem-vindo à Apple Juice</h1>
+                    <p class="hero-subtitle">Sua loja especializada em peças de PC, gaming, home office e acessórios tech de alta qualidade</p>
+                    <div class="hero-badges">
+                        <span class="badge-hero"><i class="fas fa-bolt"></i> Entrega Express</span>
+                        <span class="badge-hero"><i class="fas fa-star"></i> Produtos Premium</span>
+                        <span class="badge-hero"><i class="fas fa-truck"></i> Frete Grátis</span>
+                    </div>
+                    <button onclick="appState.openOffers()" class="btn-hero">
+                        <i class="fas fa-chart-line"></i> Ver Ofertas Especiais
+                    </button>
+                </div>
+            </section>
+
+            <!-- Categories Section -->
+            <section id="categories" class="categories-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Nossas Categorias</h2>
+                        <p>Explore nossa seleção cuidadosa de produtos para cada necessidade</p>
+                    </div>
+                    <div class="categories-grid" id="categories-grid"></div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="products" class="products-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Produtos em Destaque</h2>
+                        <p>Os melhores produtos selecionados para você com preços especiais</p>
+                    </div>
+                    <div class="products-grid" id="products-grid"></div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section id="newsletter" class="newsletter-section">
+                <div class="container newsletter-content">
+                    <h2>Fique por Dentro das Novidades</h2>
+                    <p>Receba ofertas exclusivas e lançamentos em primeira mão</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Seu e-mail" required>
+                        <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div class="footer-col">
+                            <h3>Apple Juice</h3>
+                            <p>Sua loja de confiança para tecnologia e gaming.</p>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Categorias</h4>
+                            <ul>
+                                <li><button onclick="appState.navigateToSection('categories')">Gaming</button></li>
+                                <li><button onclick="appState.navigateToSection('categories')">Home Office</button></li>
+                                <li><button onclick="appState.navigateToSection('categories')">Uso Profissional</button></li>
+                                <li><button onclick="appState.navigateToSection('categories')">Acessórios</button></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Atendimento</h4>
+                            <ul>
+                                <li><button onclick="showToast('Em breve: Central de Ajuda', 'info')">Central de Ajuda</button></li>
+                                <li><button onclick="showToast('Em breve: Trocas e Devoluções', 'info')">Trocas e Devoluções</button></li>
+                                <li><button onclick="showToast('Em breve: Informações de Garantia', 'info')">Garantia</button></li>
+                                <li><button onclick="showToast('Em breve: Fale Conosco', 'info')">Contato</button></li>
+                            </ul>
+                        </div>
+                        <div class="footer-col">
+                            <h4>Empresa</h4>
+                            <ul>
+                                <li><button onclick="showToast('Em breve: Sobre a Apple Juice', 'info')">Sobre Nós</button></li>
+                                <li><button onclick="showToast('Em breve: Oportunidades de Carreira', 'info')">Trabalhe Conosco</button></li>
+                                <li><button onclick="showToast('Em breve: Termos de Uso', 'info')">Termos de Uso</button></li>
+                                <li><button onclick="showToast('Em breve: Política de Privacidade', 'info')">Privacidade</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Apple Juice - Todos os direitos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Category Views (will be shown/hidden dynamically) -->
+        <div id="category-view" style="display: none;"></div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="sidebar">
+        <div class="sidebar-overlay" onclick="appState.closeCart()"></div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-shopping-bag"></i> Seu Carrinho (<span id="cart-count">0</span> <span id="cart-items-label">itens</span>)</h3>
+                <p class="sidebar-description">Gerencie os produtos do seu carrinho de compras</p>
+                <button onclick="appState.closeCart()" class="sidebar-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="cart-content" class="sidebar-body"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-overlay" onclick="appState.closeLogin()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user"></i> Acesse sua conta</h3>
+                <p>Entre ou cadastre-se para continuar suas compras</p>
+                <button onclick="appState.closeLogin()" class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="tabs">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="login">Entrar</button>
+                        <button class="tab-btn" data-tab="register">Cadastrar</button>
+                    </div>
+                    <div class="tab-content active" id="login-tab">
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" id="login-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Senha</label>
+                                <input type="password" id="login-password" required>
+                            </div>
+                            <button type="submit" class="btn-primary btn-full">Entrar</button>
+                        </form>
+                    </div>
+                    <div class="tab-content" id="register-tab">
+                        <form id="register-form">
+                            <div class="form-group">
+                                <label>Nome completo</label>
+                                <input type="text" id="register-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input type="email" id="register-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Senha</label>
+                                <input type="password" id="register-password" required>
+                            </div>
+                            <button type="submit" class="btn-primary btn-full">Cadastrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="modal">
+        <div class="modal-overlay" onclick="appState.closeSearch()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3><i class="fas fa-search"></i> Buscar Produtos</h3>
+                <p>Procure por produtos, categorias ou marcas em nosso catálogo</p>
+                <button onclick="appState.closeSearch()" class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Digite o nome do produto..." onkeyup="handleSearch()">
+                        <button id="clear-search" class="clear-btn" onclick="clearSearch()" style="display: none;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="search-filters" id="search-filters"></div>
+                    <div class="search-results">
+                        <div class="search-results-header" id="search-results-header">
+                            <p>0 produtos encontrados</p>
+                        </div>
+                        <div class="search-results-body" id="search-results-body"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-overlay" onclick="appState.closeCheckout()"></div>
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3><i class="fas fa-credit-card"></i> Finalizar Compra</h3>
+                <p>Complete as informações para finalizar sua compra com segurança</p>
+                <button onclick="appState.closeCheckout()" class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="checkout-content"></div>
+        </div>
+    </div>
+
+    <!-- Offers Modal -->
+    <div id="offers-modal" class="modal">
+        <div class="modal-overlay" onclick="appState.closeOffers()"></div>
+        <div class="modal-content modal-xl">
+            <div class="modal-header">
+                <h3><i class="fas fa-fire"></i> Ofertas Especiais</h3>
+                <p>Aproveite as melhores ofertas e promoções com descontos imperdíveis</p>
+                <button onclick="appState.closeOffers()" class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="offers-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
