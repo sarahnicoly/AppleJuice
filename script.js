@@ -253,14 +253,20 @@ function createProductCard(product) {
                     ${!product.inStock ? '<span class="product-badge out-of-stock">Sem Estoque</span>' : ''}
                 </div>
                 <div class="product-footer">
-                    <div class="product-prices">
-                        <div class="product-price">R$ ${formatPrice(product.price)}</div>
-                        ${hasDiscount ? `<div class="product-original-price">R$ ${formatPrice(product.originalPrice)}</div>` : ''}
-                    </div>
-                    <button class="btn-add-cart" onclick='addProductToCart(${JSON.stringify(product)})' ${!product.inStock ? 'disabled' : ''}>
-                        ${product.inStock ? 'Adicionar' : 'Indisponível'}
-                    </button>
-                </div>
+    <div class="product-prices">
+        <div class="product-price">R$ ${formatPrice(product.price)}</div>
+        ${hasDiscount ? `<div class="product-original-price">R$ ${formatPrice(product.originalPrice)}</div>` : ''}
+    </div>
+    <div class="product-buttons">
+        <button class="btn-view-details" onclick='openProductDetails(${JSON.stringify(product)})'>
+            Ver Detalhes
+        </button>
+        <button class="btn-add-cart" onclick='addProductToCart(${JSON.stringify(product)})' ${!product.inStock ? 'disabled' : ''}>
+            ${product.inStock ? 'Adicionar' : 'Indisponível'}
+        </button>
+    </div>
+</div>
+
             </div>
         </div>
     `;

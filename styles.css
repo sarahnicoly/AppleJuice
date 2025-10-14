@@ -1427,3 +1427,70 @@ img {
 .hidden {
     display: none !important;
 }
+
+/* --- Botões separados --- */
+.product-buttons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.btn-view-details {
+    background: var(--background-gray);
+    color: var(--text-primary);
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.btn-view-details:hover {
+    background: var(--background);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-add-cart {
+    background: linear-gradient(to right, #dc2626, #991b1b);
+    color: var(--text-white);
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-add-cart:hover:not(:disabled) {
+    background: linear-gradient(to right, #b91c1c, #7f1d1d);
+    transform: translateY(-1px);
+}
+
+.product-detail-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-back {
+    background: var(--background-gray);
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.btn-back:hover {
+    background: var(--background);
+}
+
+container.innerHTML += `
+    <div class="product-detail-buttons">
+        <button class="btn-back" onclick="window.history.back()">Voltar</button>
+        <button class="btn-buy" ${!product.inStock ? "disabled" : ""}>
+            ${product.inStock ? "Adicionar ao Carrinho" : "Indisponível"}
+        </button>
+    </div>
+`;
