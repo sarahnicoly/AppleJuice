@@ -1,97 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de Produto | Loja Exemplo</title>
 
-<div class="product-detail-container">
-    <button class="btn-back" onclick="appState.navigateToHome()">
-        <i class="fas fa-arrow-left"></i> Voltar
-    </button>
-    <div class="product-detail-main">
-        <div class="product-images">
-            <div class="main-image">
-                <img id="main-product-image" src="" alt="Product Image" onclick="openImageModal(this.src)">
-            </div>
-            <div class="thumbnail-images" id="thumbnail-images">
-                <!-- Thumbnails will be populated by JS -->
-            </div>
-        </div>
-        <div class="product-info">
-            <h1 id="product-title-detail"></h1>
-            <div class="product-rating-section">
-                <div id="product-rating-detail" class="stars"></div>
-                <a href="#product-reviews-section" id="product-review-count-detail"></a>
-            </div>
-            <div class="product-price-section">
-                <div id="product-price-detail" class="product-price"></div>
-                <div id="product-original-price-detail" class="product-original-price"></div>
-                <div id="product-discount-detail" class="badge-discount"></div>
-            </div>
-            <div id="product-installments-detail" class="product-installments"></div>
-            
-            <div class="product-variants">
-                <h4>Variantes</h4>
-                <div id="product-variants-options-detail">
-                    <!-- Variant options will be populated by JS -->
-                </div>
-            </div>
+  <!-- Importa o CSS -->
+  <link rel="stylesheet" href="produto.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Galeria de Imagens -->
+    <div class="product-gallery">
+      <img id="mainImage" src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=800" class="main-image" alt="Produto" />
+      <div class="thumbnail-row">
+        <img src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=800" class="thumbnail active" />
+        <img src="https://images.unsplash.com/photo-1623243747526-d1a0413e45c6?w=800" class="thumbnail" />
+        <img src="https://images.unsplash.com/photo-1612831455546-1b8c0f1b7a06?w=800" class="thumbnail" />
+        <img src="https://images.unsplash.com/photo-1616627987213-f8f46ef1aaf9?w=800" class="thumbnail" />
+      </div>
+    </div>
 
-            <div class="product-shipping">
-                <h4><i class="fas fa-truck"></i> Opções de Frete</h4>
-                <div id="product-shipping-options-detail">
-                    <p>Calcule o frete para sua região</p>
-                    <div class="frete-calculator">
-                        <input type="text" placeholder="Digite seu CEP">
-                        <button class="btn-outline">Calcular</button>
-                    </div>
-                    <div>
-                        <span class="shopee-guarantee"><i class="fas fa-shield-alt"></i> Garantia Shopee</span>
-                        <span class="free-shipping-seal"><i class="fas fa-truck"></i> Frete Grátis</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Detalhes do Produto -->
+    <div class="product-details">
+      <h1>Smartwatch D20 Original à Prova d’Água</h1>
+      <div>
+        <span class="price">R$ 129,00</span>
+        <span class="old-price">R$ 199,00</span>
+        <span class="discount">-35%</span>
+      </div>
 
-            <div class="product-actions">
-                <div class="quantity-selector">
-                    <label>Quantidade:</label>
-                    <div class="qty-input">
-                        <button class="qty-btn" onclick="updateQuantityDetail(-1)">-</button>
-                        <input type="number" id="product-quantity-detail" value="1" min="1">
-                        <button class="qty-btn" onclick="updateQuantityDetail(1)">+</button>
-                    </div>
-                    <span id="product-stock-detail"></span>
-                </div>
-                <button id="add-to-cart-btn-detail" class="btn-primary"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
-                <button id="buy-now-btn-detail" class="btn-secondary"><i class="fas fa-dollar-sign"></i> Comprar Agora</button>
-                <button id="favorite-btn-detail" class="icon-btn"><i class="far fa-heart"></i></button>
-            </div>
-             <div class="product-sharing">
-                <h4>Compartilhar:</h4>
-                <div class="share-buttons">
-                    <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
+      <div class="variations">
+        <div class="variation-group">
+          <label>Cor:</label>
+          <div class="variation-options">
+            <button class="active">Preto</button>
+            <button>Branco</button>
+            <button>Rosa</button>
+          </div>
         </div>
+
+        <div class="variation-group">
+          <label>Tamanho da Pulseira:</label>
+          <div class="variation-options">
+            <button class="active">Padrão</button>
+            <button>Grande</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-cart">Adicionar ao Carrinho</button>
+        <button class="btn btn-buy">Comprar Agora</button>
+      </div>
+
+      <p>📦 Frete grátis para todo o Brasil | Entrega em até 7 dias úteis</p>
     </div>
-    <div class="product-seller-info">
-         <!-- Seller info here -->
+  </div>
+
+  <!-- Descrição -->
+  <div class="description">
+    <h2>Descrição do Produto</h2>
+    <p>O Smartwatch D20 é o relógio inteligente ideal para acompanhar suas atividades diárias. Possui monitor de batimentos, controle de sono e notificações em tempo real. Compatível com Android e iOS.</p>
+    <ul>
+      <li>✅ Monitoramento de saúde</li>
+      <li>✅ À prova d'água IP67</li>
+      <li>✅ Duração da bateria: até 7 dias</li>
+      <li>✅ Acompanha cabo de carregamento</li>
+    </ul>
+  </div>
+
+  <!-- Avaliações -->
+  <div class="reviews">
+    <h2>Avaliações (4.8 ⭐)</h2>
+    <div class="review-item">
+      <strong>Maria S.</strong> ⭐⭐⭐⭐⭐<br />
+      <p>Chegou super rápido! O produto é lindo e funciona perfeitamente.</p>
     </div>
-    <div class="product-details-tabs">
-        <div class="tabs-header">
-            <button class="tab-btn active" onclick="showTab('specs')">Especificações</button>
-            <button class="tab-btn" onclick="showTab('reviews')">Avaliações</button>
-            <button class="tab-btn" onclick="showTab('qa')">Perguntas</button>
-        </div>
-        <div id="specs-tab" class="tab-content active">
-            <h3>Especificações Técnicas</h3>
-            <table id="product-specs-table-detail" class="specs-table"></table>
-        </div>
-        <div id="reviews-tab" class="tab-content">
-            <h3>Avaliações de Clientes</h3>
-        </div>
-        <div id="qa-tab" class="tab-content">
-            <h3>Perguntas e Respostas</h3>
-        </div>
+    <div class="review-item">
+      <strong>João P.</strong> ⭐⭐⭐⭐<br />
+      <p>Gostei muito, só achei a pulseira um pouco grande.</p>
     </div>
-     <div class="product-report-section">
-        <button id="report-product-btn" class="btn-text"><i class="fas fa-flag"></i> Denunciar este produto</button>
+  </div>
+
+  <!-- Produtos Relacionados -->
+  <div class="related">
+    <h2>Você também pode gostar</h2>
+    <div class="related-products">
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1585386959984-a41552231693?w=400" alt="Produto 1" />
+        <p>Fone Bluetooth Pro</p>
+        <span class="price">R$ 89,90</span>
+      </div>
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400" alt="Produto 2" />
+        <p>Carregador Turbo USB-C</p>
+        <span class="price">R$ 59,90</span>
+      </div>
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=400" alt="Produto 3" />
+        <p>Pulseira Esportiva Extra</p>
+        <span class="price">R$ 39,90</span>
+      </div>
     </div>
-</div>
+  </div>
+
+  <!-- Importa o JavaScript -->
+  <script src="produto.js"></script>
+</body>
+</html>
