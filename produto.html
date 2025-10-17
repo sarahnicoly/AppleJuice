@@ -1,111 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tela de Produto | Loja Exemplo</title>
-
-  <!-- Importa o CSS -->
-  <link rel="stylesheet" href="produto.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Produto | Apple Juice</title>
+  <link rel="stylesheet" href="produto.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <!-- Galeria de Imagens -->
-    <div class="product-gallery">
-      <img id="mainImage" src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=800" class="main-image" alt="Produto" />
-      <div class="thumbnail-row">
-        <img src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=800" class="thumbnail active" />
-        <img src="https://images.unsplash.com/photo-1623243747526-d1a0413e45c6?w=800" class="thumbnail" />
-        <img src="https://images.unsplash.com/photo-1612831455546-1b8c0f1b7a06?w=800" class="thumbnail" />
-        <img src="https://images.unsplash.com/photo-1616627987213-f8f46ef1aaf9?w=800" class="thumbnail" />
-      </div>
+  <header class="header">
+    <div class="logo" onclick="window.location.href='../index.html'">🍎 Apple Juice</div>
+    <div class="cart-btn" onclick="goToCart()">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
     </div>
+  </header>
 
-    <!-- Detalhes do Produto -->
-    <div class="product-details">
-      <h1>Smartwatch D20 Original à Prova d’Água</h1>
-      <div>
-        <span class="price">R$ 129,00</span>
-        <span class="old-price">R$ 199,00</span>
-        <span class="discount">-35%</span>
-      </div>
+  <main id="product-details" class="product-details">
+    <!-- Detalhes do produto carregados via JS -->
+  </main>
 
-      <div class="variations">
-        <div class="variation-group">
-          <label>Cor:</label>
-          <div class="variation-options">
-            <button class="active">Preto</button>
-            <button>Branco</button>
-            <button>Rosa</button>
-          </div>
-        </div>
+  <section id="related-products" class="related-section">
+    <h2>Produtos Relacionados</h2>
+    <div class="related-grid" id="related-grid"></div>
+  </section>
 
-        <div class="variation-group">
-          <label>Tamanho da Pulseira:</label>
-          <div class="variation-options">
-            <button class="active">Padrão</button>
-            <button>Grande</button>
-          </div>
-        </div>
-      </div>
+  <footer class="footer">
+    <p>© 2025 Apple Juice - Todos os direitos reservados.</p>
+  </footer>
 
-      <div class="actions">
-        <button class="btn btn-cart">Adicionar ao Carrinho</button>
-        <button class="btn btn-buy">Comprar Agora</button>
-      </div>
-
-      <p>📦 Frete grátis para todo o Brasil | Entrega em até 7 dias úteis</p>
-    </div>
-  </div>
-
-  <!-- Descrição -->
-  <div class="description">
-    <h2>Descrição do Produto</h2>
-    <p>O Smartwatch D20 é o relógio inteligente ideal para acompanhar suas atividades diárias. Possui monitor de batimentos, controle de sono e notificações em tempo real. Compatível com Android e iOS.</p>
-    <ul>
-      <li>✅ Monitoramento de saúde</li>
-      <li>✅ À prova d'água IP67</li>
-      <li>✅ Duração da bateria: até 7 dias</li>
-      <li>✅ Acompanha cabo de carregamento</li>
-    </ul>
-  </div>
-
-  <!-- Avaliações -->
-  <div class="reviews">
-    <h2>Avaliações (4.8 ⭐)</h2>
-    <div class="review-item">
-      <strong>Maria S.</strong> ⭐⭐⭐⭐⭐<br />
-      <p>Chegou super rápido! O produto é lindo e funciona perfeitamente.</p>
-    </div>
-    <div class="review-item">
-      <strong>João P.</strong> ⭐⭐⭐⭐<br />
-      <p>Gostei muito, só achei a pulseira um pouco grande.</p>
-    </div>
-  </div>
-
-  <!-- Produtos Relacionados -->
-  <div class="related">
-    <h2>Você também pode gostar</h2>
-    <div class="related-products">
-      <div class="related-card">
-        <img src="https://images.unsplash.com/photo-1585386959984-a41552231693?w=400" alt="Produto 1" />
-        <p>Fone Bluetooth Pro</p>
-        <span class="price">R$ 89,90</span>
-      </div>
-      <div class="related-card">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400" alt="Produto 2" />
-        <p>Carregador Turbo USB-C</p>
-        <span class="price">R$ 59,90</span>
-      </div>
-      <div class="related-card">
-        <img src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=400" alt="Produto 3" />
-        <p>Pulseira Esportiva Extra</p>
-        <span class="price">R$ 39,90</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Importa o JavaScript -->
   <script src="produto.js"></script>
 </body>
 </html>
