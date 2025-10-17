@@ -1,29 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tela de Produto | Loja Exemplo</title>
-
-  <!-- Importa o CSS -->
-  <link rel="stylesheet" href="produto.css" />
+<link rel="stylesheet" href="produto.css" />
 </head>
 <body>
 
   <!-- ================= Container Principal ================= -->
   <div class="container">
+    <!-- Galeria de Imagens -->
 
     <!-- ===== Galeria de Imagens ===== -->
     <div class="product-gallery">
       <img id="mainImage" src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=800" class="main-image" alt="Produto" />
       <div class="thumbnail-row">
-        <img src="https://images.unsplash.com/photo-1606813902917-763ab3a17ce1?w=800" class="thumbnail active" />
-        <img src="https://images.unsplash.com/photo-1623243747526-d1a0413e45c6?w=800" class="thumbnail" />
-        <img src="https://images.unsplash.com/photo-1612831455546-1b8c0f1b7a06?w=800" class="thumbnail" />
-        <img src="https://images.unsplash.com/photo-1616627987213-f8f46ef1aaf9?w=800" class="thumbnail" />
+@@ -21,16 +24,20 @@
       </div>
     </div>
 
+    <!-- Detalhes do Produto -->
     <!-- ===== Detalhes do Produto ===== -->
     <div class="product-details">
       <h1>Smartwatch D20 Original à Prova d’Água</h1>
@@ -41,9 +32,7 @@
         <div class="variation-group">
           <label>Cor:</label>
           <div class="variation-options">
-            <button class="active">Preto</button>
-            <button>Branco</button>
-            <button>Rosa</button>
+@@ -40,28 +47,34 @@ <h1>Smartwatch D20 Original à Prova d’Água</h1>
           </div>
         </div>
 
@@ -69,20 +58,22 @@
 
   </div>
 
+  <!-- Descrição -->
   <!-- ================= Descrição ================= -->
   <div class="description">
     <h2>Descrição do Produto</h2>
+    <p>O Smartwatch D20 é o relógio inteligente ideal para acompanhar suas atividades diárias. Possui monitor de batimentos, controle de sono e notificações em tempo real. Compatível com Android e iOS.</p>
     <p>
       O Smartwatch D20 é o relógio inteligente ideal para acompanhar suas atividades diárias. Possui monitor de batimentos, controle de sono e notificações em tempo real. Compatível com Android e iOS.
     </p>
     <ul>
       <li>✅ Monitoramento de saúde</li>
       <li>✅ À prova d'água IP67</li>
-      <li>✅ Duração da bateria: até 7 dias</li>
-      <li>✅ Acompanha cabo de carregamento</li>
+@@ -70,42 +83,50 @@ <h2>Descrição do Produto</h2>
     </ul>
   </div>
 
+  <!-- Avaliações -->
   <!-- ================= Avaliações ================= -->
   <div class="reviews">
     <h2>Avaliações (4.8 ⭐)</h2>
@@ -98,6 +89,7 @@
     </div>
   </div>
 
+  <!-- Produtos Relacionados -->
   <!-- ================= Produtos Relacionados ================= -->
   <div class="related">
     <h2>Você também pode gostar</h2>
@@ -125,8 +117,10 @@
     </div>
   </div>
 
+  <!-- Importa o JavaScript -->
   <!-- ================= Importa JavaScript ================= -->
   <script src="produto.js"></script>
   
 </body>
+</html>
 </html>

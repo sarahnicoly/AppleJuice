@@ -1,3 +1,4 @@
+// Troca de imagem principal
 // ====================== Troca de Imagem Principal ======================
 const mainImage = document.getElementById("mainImage");
 const thumbnails = document.querySelectorAll(".thumbnail");
@@ -15,11 +16,13 @@ thumbnails.forEach((thumb) => {
   });
 });
 
+// Seleção de variações (cor e tamanho)
 // ====================== Seleção de Variações (Cor e Tamanho) ======================
 const variationButtons = document.querySelectorAll(".variation-options button");
 
 variationButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
+    const group = btn.parentNode;
     const group = btn.parentNode; // Seleciona o grupo da variação
     
     // Remove a classe 'active' de todos os botões do grupo
@@ -28,4 +31,5 @@ variationButtons.forEach((btn) => {
     // Adiciona a classe 'active' no botão clicado
     btn.classList.add("active");
   });
+});
 });
