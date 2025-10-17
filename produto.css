@@ -1,29 +1,31 @@
+/* ================= Global ================= */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; /* Fonte geral */
   margin: 0;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #f7f7f7; /* Fundo da página */
+  color: #333; /* Cor padrão do texto */
 }
 
 .container {
-  max-width: 1200px;
-  margin: 30px auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  display: flex;
+  max-width: 1200px; /* Largura máxima da área */
+  margin: 30px auto; /* Centraliza horizontalmente */
+  background: #fff; /* Fundo branco */
+  border-radius: 16px; /* Bordas arredondadas */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex; /* Layout horizontal */
   padding: 30px;
-  gap: 30px;
+  gap: 30px; /* Espaço entre colunas */
 }
 
+/* ================= Galeria de Imagens ================= */
 .product-gallery {
-  flex: 1;
+  flex: 1; /* Ocupa metade da largura */
 }
 
 .main-image {
   width: 100%;
   border-radius: 12px;
-  object-fit: cover;
+  object-fit: cover; /* Ajusta imagem dentro do container */
 }
 
 .thumbnail-row {
@@ -42,11 +44,12 @@ body {
 }
 
 .thumbnail.active {
-  border-color: #ff5722;
+  border-color: #ff5722; /* Destaca a miniatura selecionada */
 }
 
+/* ================= Detalhes do Produto ================= */
 .product-details {
-  flex: 1;
+  flex: 1; /* Ocupa a outra metade da largura */
 }
 
 .product-details h1 {
@@ -56,13 +59,13 @@ body {
 
 .price {
   font-size: 1.8rem;
-  color: #ff5722;
+  color: #ff5722; /* Cor laranja para preço */
   font-weight: bold;
   margin: 10px 0;
 }
 
 .old-price {
-  text-decoration: line-through;
+  text-decoration: line-through; /* Preço antigo riscado */
   color: #888;
   font-size: 1rem;
   margin-left: 10px;
@@ -74,6 +77,7 @@ body {
   margin-left: 10px;
 }
 
+/* ================= Variações ================= */
 .variations {
   margin: 20px 0;
 }
@@ -99,10 +103,11 @@ body {
 }
 
 .variation-options button.active {
-  background: #ff5722;
+  background: #ff5722; /* Botão selecionado */
   color: white;
 }
 
+/* ================= Botões de ação ================= */
 .actions {
   display: flex;
   gap: 15px;
@@ -120,19 +125,20 @@ body {
 }
 
 .btn-cart {
-  background: #ff9800;
+  background: #ff9800; /* Laranja para adicionar ao carrinho */
   color: white;
 }
 
 .btn-buy {
-  background: #ff5722;
+  background: #ff5722; /* Laranja mais forte para comprar */
   color: white;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Pequena animação ao passar o mouse */
 }
 
+/* ================= Seções ================= */
 .description,
 .reviews,
 .related {
@@ -150,14 +156,16 @@ body {
   margin-bottom: 15px;
 }
 
+/* ================= Avaliações ================= */
 .review-item {
   border-bottom: 1px solid #eee;
   padding: 10px 0;
 }
 
+/* ================= Produtos Relacionados ================= */
 .related-products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid responsivo */
   gap: 20px;
 }
 
@@ -171,7 +179,7 @@ body {
 }
 
 .related-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px); /* Leve movimento ao passar o mouse */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 

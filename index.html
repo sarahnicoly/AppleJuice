@@ -5,60 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple Juice - E-commerce de Peças de PC, Gaming e Tech</title>
     <meta name="description" content="Loja especializada em peças de PC, gaming, home office e acessórios tech de alta qualidade">
+
+    <!-- CSS principal -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Toast Container -->
-    <div id="toast-container" class="toast-container"></div>
-
-    <!-- Header -->
+    <!-- ================= Header ================= -->
     <header class="header">
         <div class="container header-content">
+            <!-- Logo -->
             <div class="header-left">
                 <h1 class="logo" onclick="appState.navigateToHome()">
                     <i class="fas fa-apple-alt"></i> Apple Juice
                 </h1>
             </div>
+
+            <!-- Navegação principal -->
             <nav class="header-nav">
                 <button onclick="appState.navigateToSection('home')" class="nav-link">Início</button>
                 <button onclick="appState.navigateToSection('categories')" class="nav-link">Categorias</button>
                 <button onclick="appState.navigateToSection('products')" class="nav-link">Produtos</button>
                 <button onclick="appState.navigateToSection('newsletter')" class="nav-link">Newsletter</button>
             </nav>
+
+            <!-- Ações do header (pesquisa, carrinho) -->
             <div class="header-actions">
                 <button onclick="appState.openSearch()" class="icon-btn">
                     <i class="fas fa-search"></i>
                 </button>
+
+                <!-- Carrinho -->
                 <button onclick="appState.openCart()" class="icon-btn cart-btn">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-badge" id="cart-badge">0</span>
+                    <span id="cart-count">0</span> <!-- quantidade de itens -->
                 </button>
-                <!-- Apenas trechos alterados -->
-
-
-                <!-- Carrinho no header -->
-<button onclick="appState.openCart()" class="icon-btn cart-btn">
-    <i class="fas fa-shopping-cart"></i>
-    <span id="cart-count">0</span> <!-- alterado de cart-badge -->
-</button>
-
-<!-- Carrinho Sidebar -->
-<h3><i class="fas fa-shopping-bag"></i> Seu Carrinho (<span id="cart-count">0</span> <span id="cart-items-label">itens</span>)</h3>
-
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- ================= Main Content ================= -->
     <main id="main-content">
-        <!-- Home View -->
+        <!-- Página inicial -->
         <div id="home-view">
             <!-- Hero Section -->
             <section id="home" class="hero-section">
                 <div class="container hero-content">
                     <h1 class="hero-title">Bem-vindo à Apple Juice</h1>
-                    <p class="hero-subtitle">Sua loja especializada em peças de PC, gaming, home office e acessórios tech de alta qualidade</p>
+                    <p class="hero-subtitle">
+                        Sua loja especializada em peças de PC, gaming, home office e acessórios tech de alta qualidade
+                    </p>
                     <div class="hero-badges">
                         <span class="badge-hero"><i class="fas fa-bolt"></i> Entrega Express</span>
                         <span class="badge-hero"><i class="fas fa-star"></i> Produtos Premium</span>
@@ -77,6 +74,7 @@
                         <h2>Nossas Categorias</h2>
                         <p>Explore nossa seleção cuidadosa de produtos para cada necessidade</p>
                     </div>
+                    <!-- Grid onde categorias serão inseridas pelo JS -->
                     <div class="categories-grid" id="categories-grid"></div>
                 </div>
             </section>
@@ -88,6 +86,7 @@
                         <h2>Produtos em Destaque</h2>
                         <p>Os melhores produtos selecionados para você com preços especiais</p>
                     </div>
+                    <!-- Grid onde produtos serão inseridos pelo JS -->
                     <div class="products-grid" id="products-grid"></div>
                 </div>
             </section>
@@ -108,10 +107,12 @@
             <footer class="footer">
                 <div class="container">
                     <div class="footer-grid">
+                        <!-- Sobre a loja -->
                         <div class="footer-col">
                             <h3>Apple Juice</h3>
                             <p>Sua loja de confiança para tecnologia e gaming.</p>
                         </div>
+                        <!-- Categorias -->
                         <div class="footer-col">
                             <h4>Categorias</h4>
                             <ul>
@@ -121,6 +122,7 @@
                                 <li><button onclick="appState.navigateToSection('categories')">Acessórios</button></li>
                             </ul>
                         </div>
+                        <!-- Atendimento -->
                         <div class="footer-col">
                             <h4>Atendimento</h4>
                             <ul>
@@ -130,6 +132,7 @@
                                 <li><button onclick="showToast('Em breve: Fale Conosco', 'info')">Contato</button></li>
                             </ul>
                         </div>
+                        <!-- Empresa -->
                         <div class="footer-col">
                             <h4>Empresa</h4>
                             <ul>
@@ -147,11 +150,11 @@
             </footer>
         </div>
 
-        <!-- Category Views (will be shown/hidden dynamically) -->
+        <!-- Category View (dinâmico) -->
         <div id="category-view" style="display: none;"></div>
     </main>
 
-    <!-- Cart Sidebar -->
+    <!-- ================= Sidebar do Carrinho ================= -->
     <div id="cart-sidebar" class="sidebar">
         <div class="sidebar-overlay" onclick="appState.closeCart()"></div>
         <div class="sidebar-content">
@@ -164,6 +167,7 @@
         </div>
     </div>
 
+    <!-- ================= Modais ================= -->
     <!-- Login Modal -->
     <div id="login-modal" class="modal">
         <div class="modal-overlay" onclick="appState.closeLogin()"></div>
@@ -179,6 +183,7 @@
                         <button class="tab-btn active" data-tab="login">Entrar</button>
                         <button class="tab-btn" data-tab="register">Cadastrar</button>
                     </div>
+                    <!-- Login -->
                     <div class="tab-content active" id="login-tab">
                         <form id="login-form">
                             <div class="form-group">
@@ -192,6 +197,7 @@
                             <button type="submit" class="btn-primary btn-full">Entrar</button>
                         </form>
                     </div>
+                    <!-- Registro -->
                     <div class="tab-content" id="register-tab">
                         <form id="register-form">
                             <div class="form-group">
@@ -270,6 +276,10 @@
         </div>
     </div>
 
+    <!-- Toasts para mensagens rápidas -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- ================= Scripts ================= -->
     <script src="script.js"></script>
 </body>
 </html>
