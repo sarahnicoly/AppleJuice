@@ -31,7 +31,7 @@ const products = [
     { id: 7, name: 'Processador AMD Ryzen 9 7900X', description: 'CPU de alto desempenho com 12 núcleos e 24 threads para gaming extremo', price: 2899.99, originalPrice: 3299.99, rating: 4.9, image: 'D_NQ_NP_975245-MLU70537297427_072023-O.webp', category: 'Gaming', inStock: true },
     { id: 8, name: 'Memória RAM DDR5 32GB RGB Gaming', description: 'Kit de memória DDR5 5600MHz com iluminação RGB sincronizável', price: 1299.99, rating: 4.7, image: '61Lo0Ab5tFL._UF1000,1000_QL80_.jpg', category: 'Gaming', inStock: true },
     { id: 9, name: 'Placa-Mãe Gaming RGB Z790', description: 'Motherboard premium com RGB, Wi-Fi 6E e suporte para overclock', price: 1799.99, rating: 4.6, image: 'placa1.jpg', category: 'Gaming', inStock: true },
-    { id: 10, name: 'SSD NVMe 2TB Gaming Pro', description: 'Armazenamento ultra-rápido PCIe 4.0 para jogos e aplicações', price: 899.99, originalPrice: 1099.99, rating: 4.8, image: 'https://images.unsplash.com/photo-1715520530023-cc8a1b2044ab?w=400', category: 'Gaming', inStock: true },
+    { id: 10, name: 'SSD NVMe 2TB Gaming Pro', description: 'Armazenamento ultra-rápido PCIe 4.0 para jogos e aplicações', price: 899.99, originalPrice: 1099.99, rating: 4.8, image: 'ssd1.jpg', category: 'Gaming', inStock: true },
     { id: 5, name: 'Setup Gaming Completo RGB', description: 'Setup completo com PC, monitor, teclado, mouse e headset para gamers', price: 8999.99, originalPrice: 10499.99, rating: 4.9, image: 'https://images.unsplash.com/photo-1623243747526-d1a0413e45c6?w=400', category: 'Gaming', inStock: false },
     
     // Home Office
