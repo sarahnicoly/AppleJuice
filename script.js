@@ -623,7 +623,7 @@ function formatPrice(price) {
 }
 
 function updateCartBadge() {
-    const badge = document.getElementById('cart-badge');
+    const badge = document.getElementById('cart-count'); // <--- alterado aqui
     badge.textContent = appState.getCartItemsCount();
 }
 

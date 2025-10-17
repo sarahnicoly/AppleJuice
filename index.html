@@ -34,9 +34,17 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-badge" id="cart-badge">0</span>
                 </button>
-                <button onclick="appState.openLogin()" class="btn-login" id="login-btn">
-                    <i class="fas fa-user"></i> <span id="login-text">Login</span>
-                </button>
+                <!-- Apenas trechos alterados -->
+
+<!-- Carrinho no header -->
+<button onclick="appState.openCart()" class="icon-btn cart-btn">
+    <i class="fas fa-shopping-cart"></i>
+    <span id="cart-count">0</span> <!-- alterado de cart-badge -->
+</button>
+
+<!-- Carrinho Sidebar -->
+<h3><i class="fas fa-shopping-bag"></i> Seu Carrinho (<span id="cart-count">0</span> <span id="cart-items-label">itens</span>)</h3>
+
             </div>
         </div>
     </header>
